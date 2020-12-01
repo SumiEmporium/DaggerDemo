@@ -6,7 +6,7 @@ import com.bdtheme.receipedagger.MyApplication
 import com.bdtheme.receipedagger.repository.RetrofitRepository
 import javax.inject.Inject
 
-class RetroViewModelFactory : ViewModelProvider.Factory {
+class RetroViewModelFactory @Inject constructor() : ViewModelProvider.Factory {
     @Inject
     lateinit var retrofitRepository: RetrofitRepository
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {

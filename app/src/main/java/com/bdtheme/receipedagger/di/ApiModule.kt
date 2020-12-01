@@ -1,6 +1,7 @@
 package com.bdtheme.receipedagger.di
 
 import com.bdtheme.receipedagger.repository.RetrofitRepository
+import com.bdtheme.receipedagger.viewmodel.RetroViewModelFactory
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
@@ -22,8 +23,7 @@ class ApiModule constructor(baseURL: String) {
     fun provideOKHttpClient(): OkHttpClient {
         return OkHttpClient.Builder()
             .readTimeout(1200, TimeUnit.SECONDS)
-            .connectTimeout(1200, TimeUnit.SECONDS).
-            build()
+            .connectTimeout(1200, TimeUnit.SECONDS).build()
     }
 
     @Singleton
@@ -48,5 +48,10 @@ class ApiModule constructor(baseURL: String) {
     @Provides
     fun provideRetroRepository(): RetrofitRepository {
         return RetrofitRepository()
+    }
+
+    @Provides
+    fun provideFactory(): RetroViewModelFactory {
+        return RetroViewModelFactory()
     }
 }

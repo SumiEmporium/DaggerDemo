@@ -2,8 +2,8 @@ package com.bdtheme.receipedagger
 
 import android.app.Application
 import android.content.Context
-import com.bdtheme.receipedagger.di.AppComponent
 import com.bdtheme.receipedagger.di.ApiModule
+import com.bdtheme.receipedagger.di.AppComponent
 import com.bdtheme.receipedagger.di.DaggerAppComponent
 import com.bdtheme.receipedagger.repository.APIURL
 
@@ -19,10 +19,6 @@ class MyApplication : Application() {
 
         context = applicationContext
         appComponent = initDaggerComponent()
-    }
-
-    fun getMyComponent(): AppComponent {
-        return appComponent
     }
 
     fun initDaggerComponent(): AppComponent {

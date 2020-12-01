@@ -23,8 +23,7 @@ class MainActivity : AppCompatActivity() {
 
         adapter = ReceipeAdapter(this)
         val retroViewModelFactory = RetroViewModelFactory()
-        retroViewModel =
-            ViewModelProvider(this, retroViewModelFactory).get(RetroViewModel::class.java)
+        retroViewModel = ViewModelProvider(this, retroViewModelFactory).get(RetroViewModel::class.java)
 
         retroViewModel.recipeLiveData.observe(this, object : Observer<List<ReceipeModel>> {
             override fun onChanged(t: List<ReceipeModel>?) {

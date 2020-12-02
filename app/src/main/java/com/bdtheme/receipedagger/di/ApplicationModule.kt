@@ -13,9 +13,6 @@ import javax.inject.Singleton
 @Module(includes = [ViewModelModule::class])
 class ApplicationModule {
 
-    companion object {
-        val baseURL = APIURL.BASE_URL
-    }
 
     @Singleton
     @Provides
@@ -38,7 +35,7 @@ class ApplicationModule {
         okHttpClient: OkHttpClient
     ): Retrofit {
         return Retrofit.Builder()
-            .baseUrl(baseURL)
+            .baseUrl(APIURL.BASE_URL)
             .addConverterFactory(gsonConverterFactory)
             .client(okHttpClient)
             .build()

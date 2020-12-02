@@ -1,7 +1,6 @@
 package com.bdtheme.receipedagger.di
 
 import com.bdtheme.receipedagger.repository.RetrofitRepository
-import com.bdtheme.receipedagger.viewmodel.RetroViewModelFactory
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
@@ -10,7 +9,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
-@Module
+@Module(includes = [ViewModelModule::class])
 class ApiModule constructor(baseURL: String) {
     var baseURL: String = ""
 
@@ -50,8 +49,4 @@ class ApiModule constructor(baseURL: String) {
         return RetrofitRepository()
     }
 
-    @Provides
-    fun provideFactory(): RetroViewModelFactory {
-        return RetroViewModelFactory()
-    }
 }

@@ -8,11 +8,10 @@ import com.bdtheme.receipedagger.repository.RetrofitRepository
 import javax.inject.Inject
 
 class RetroViewModel @Inject constructor(private val retrofitRepository: RetrofitRepository) : ViewModel() {
-//    var retrofitRepository: RetrofitRepository
+
     var recipeLiveData: LiveData<List<ReceipeModel>> = MutableLiveData()
 
     init {
-//        this.retrofitRepository = retrofitRepository
         fetchRecipeList()
     }
 

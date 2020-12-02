@@ -11,12 +11,12 @@ import com.bdtheme.receipedagger.databinding.ActivityMainBinding
 import com.bdtheme.receipedagger.di.AppComponent
 import com.bdtheme.receipedagger.model.ReceipeModel
 import com.bdtheme.receipedagger.viewmodel.RetroViewModel
-import com.bdtheme.receipedagger.viewmodel.RetroViewModelFactory
+import com.bdtheme.receipedagger.viewmodel.ViewModelFactory
 import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
     @Inject
-    lateinit var viewModelFactory: RetroViewModelFactory
+    lateinit var viewModelFactory: ViewModelFactory
 
     lateinit var retroViewModel: RetroViewModel
     lateinit var adapter: ReceipeAdapter

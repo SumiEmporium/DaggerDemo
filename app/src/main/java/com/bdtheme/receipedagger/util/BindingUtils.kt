@@ -10,14 +10,9 @@ import com.bumptech.glide.request.RequestOptions
 @BindingAdapter("image")
 fun loadImage(image: ImageView, url: String) {
     Glide.with(image)
-            .load(url)
-            .apply(RequestOptions.placeholderOf(R.drawable.defalt)).diskCacheStrategy(DiskCacheStrategy.RESOURCE)
-            .error(R.drawable.defalt)
-            .into(image)
-}
-
-@BindingAdapter("circleimage")
-fun loadCircleImage(image: ImageView, url: String) {
-    Glide.with(image).load(url).apply(RequestOptions().circleCrop().placeholder(R.drawable.defalt)
-            .error(R.drawable.defalt)).into(image)
+        .load(url)
+        .apply(RequestOptions.placeholderOf(R.drawable.defalt))
+        .diskCacheStrategy(DiskCacheStrategy.RESOURCE)
+        .error(R.drawable.defalt)
+        .into(image)
 }

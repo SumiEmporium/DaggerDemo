@@ -1,6 +1,7 @@
 package com.bdtheme.receipedagger.di
 
-import com.bdtheme.receipedagger.repository.RetrofitRepository
+import com.bdtheme.receipedagger.api.ReceipeApiService
+import com.bdtheme.receipedagger.repository.APIURL
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
@@ -10,11 +11,10 @@ import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
 @Module(includes = [ViewModelModule::class])
-class ApiModule constructor(baseURL: String) {
-    var baseURL: String = ""
+class ApplicationModule {
 
-    init {
-        this.baseURL = baseURL
+    companion object {
+        val baseURL = APIURL.BASE_URL
     }
 
     @Singleton
@@ -44,9 +44,10 @@ class ApiModule constructor(baseURL: String) {
             .build()
     }
 
-    @Provides
-    fun provideRetroRepository(): RetrofitRepository {
-        return RetrofitRepository()
-    }
 
+    @Singleton
+    @Provides
+    fun provideRetrofitService(retrofit: Retrofit): ReceipeApiService {
+        return retrofit.create(ReceipeApiService::class.java)
+    }
 }

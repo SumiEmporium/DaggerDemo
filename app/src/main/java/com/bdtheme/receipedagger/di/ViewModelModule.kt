@@ -12,7 +12,6 @@ import dagger.multibindings.IntoMap
 @Module
 abstract class ViewModelModule {
 
-    // PSB View Model Bind Here
     @Binds
     abstract fun bindViewModelFactory(factory: ViewModelFactory): ViewModelProvider.Factory
 

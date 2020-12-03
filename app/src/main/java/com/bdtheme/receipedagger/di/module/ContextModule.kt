@@ -1,4 +1,4 @@
-package com.bdtheme.receipedagger.di
+package com.bdtheme.receipedagger.di.module
 
 import android.app.Application
 import android.content.Context

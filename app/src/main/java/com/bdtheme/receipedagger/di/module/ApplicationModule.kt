@@ -1,4 +1,4 @@
-package com.bdtheme.receipedagger.di
+package com.bdtheme.receipedagger.di.module
 
 import com.bdtheme.receipedagger.api.ReceipeApiService
 import com.bdtheme.receipedagger.repository.APIURL

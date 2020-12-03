@@ -1,6 +1,6 @@
-package com.bdtheme.receipedagger.di
+package com.bdtheme.receipedagger.di.module
 
-import com.bdtheme.receipedagger.MainActivity
+import com.bdtheme.receipedagger.ui.MainActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 

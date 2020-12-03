@@ -1,7 +1,8 @@
-package com.bdtheme.receipedagger.di
+package com.bdtheme.receipedagger.di.module
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.bdtheme.receipedagger.di.ViewModelKey
 import com.bdtheme.receipedagger.viewmodel.RetroViewModel
 import com.bdtheme.receipedagger.viewmodel.ViewModelFactory
 import dagger.Binds

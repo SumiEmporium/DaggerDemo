@@ -4,7 +4,6 @@ import android.app.Application
 import com.bdtheme.receipedagger.BaseApplication
 import com.bdtheme.receipedagger.di.module.ActivityBindingModule
 import com.bdtheme.receipedagger.di.module.ApplicationModule
-import com.bdtheme.receipedagger.di.module.ContextModule
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjector
@@ -15,7 +14,7 @@ import javax.inject.Singleton
 
 @Singleton
 @Component(
-    modules = [ContextModule::class, AndroidSupportInjectionModule::class,
+    modules = [AndroidSupportInjectionModule::class,
         ApplicationModule::class, ActivityBindingModule::class]
 )
 interface ApplicationComponent : AndroidInjector<DaggerApplication> {
